@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+
 import styled from "styled-components";
 import DataTable from "../components/DataTable";
 import Navbar from "../components/Navbar";

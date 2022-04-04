@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
 import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
-import { display } from "@mui/system";
 
 const Container = styled.div`
   display: flex;
