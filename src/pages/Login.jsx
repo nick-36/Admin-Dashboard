@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { loginFailure, loginStart, loginSuccess } from "../Store/userSlice";
-import { useNavigate } from "react-router-dom";
-import { userRequest } from "../requestMethods";
 
 const Container = styled.div`
   height: 100vh;
@@ -56,32 +52,10 @@ const Button = styled.button`
   border-radius: 10px;
 `;
 
-const Error = styled.span`
-  font-size: 1.6rem;
-  color: red;
-`;
 
 function Login(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
-  const { error } = useSelector((state) => state);
-  console.log(error);
-  const dispatch = useDispatch();
-
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    dispatch(loginStart());
-    try {
-      const res = await userRequest.post("/auth/login", { username, password });
-      console.log(res.data);
-      dispatch(loginSuccess({ user: res.data }));
-      navigate({ pathname: "/" });
-    } catch (err) {
-      console.log(err);
-      dispatch(loginFailure());
-    }
-  };
 
   return (
     <Container>
@@ -111,9 +85,8 @@ function Login(props) {
               textDecoration: "none",
             }}
           >
-            <Button onClick={handleLogin}>LOGIN</Button>
+            <Button>LOGIN</Button>
           </Link>
-          {error && <Error>Something Went Wrong....</Error>}
         </Form>
       </Wrapper>
     </Container>
