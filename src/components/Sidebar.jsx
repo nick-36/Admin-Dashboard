@@ -138,7 +138,9 @@ function Sidebar(props) {
             <SettingsApplicationsIcon
               style={{ height: "24px", width: "24px", color: "teal" }}
             />
-            <ListText>Logs</ListText>
+            <Link to="/new">
+              <ListText>New</ListText>
+            </Link>
           </ListItem>{" "}
           <ListItem>
             <SettingsApplicationsIcon
