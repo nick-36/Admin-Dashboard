@@ -34,7 +34,7 @@ function App() {
           />
         </Route>
         <Route path="/orders" element={<List />} />
-        <Route path="/new" element={<New />} />
+        {/* <Route path="/new" element={<New />} /> */}
       </Routes>
     </Container>
   );
